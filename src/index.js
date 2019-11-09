@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import App from './components/App.jsx';
 
 ReactDOM.render(
-	<div>
-		Algo aki
-	</div>, 
+	<App></App>, 
 	document.getElementById('root')
 );
