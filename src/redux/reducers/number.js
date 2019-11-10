@@ -9,8 +9,9 @@ const number = (state = INITIAL_STATE, action) =>
     console.log('Reducer "number" - action:', action) //HACK:
     switch (action.type) {
         case 'ADD_NUMBER':
+            console.log('entra ADD_NUMBER - state:', state) //HACK:
             const { numberValue } = action.payload;
-            console.log('entra ADD_NUMBER - state:', state, action)
+
             return {
                 ...state,
                 numberValue

@@ -13,20 +13,34 @@ class App extends Component
         //console.log('store / state', store.getState());
         return (
             <div>
-                Some content from App component
-                <p>Number value in App: <span>{this.props.numberValue}</span>.</p>
-                <button onClick={()=>{this.props.handleNumberFun(2);}}>Añado 2</button>
+                <h1>Some content from App component</h1>
+
+                <button onClick={() => { this.setNumber(1) }}>
+                    Añado 1
+                </button>
+                <button onClick={() => { this.setNumber(2) }}>
+                    Añado 2
+                </button>
 
                 <hr />
                 <Number value="1000"></Number>
             </div>
         );
     }
+
+    setNumber(num)
+    {
+        this.props.setNumber(
+            {
+                numberValue: num
+            }
+        )
+    }
 }
 
 const mapStateToProps = null;
 const mapDispatchToProps = dispatch => ({
-    handleNumberFun: (payload) => {
+    setNumber: (payload) => {
         console.log('App / mapDispatchToProps() - saving ' + payload)//HACK:
         dispatch(
             handleNumberFun(payload)
