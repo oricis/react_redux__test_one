@@ -32,16 +32,23 @@ class App extends Component
     {
         this.props.setNumber(
             {
-                numberValue: num
+                numberValue: num,
+                summation: this.props.nValue
             }
         )
     }
 }
 
-const mapStateToProps = null;
+const mapStateToProps = (state) => {
+    const nValue = state.NUMBER.summation;
+
+    return {
+        nValue,
+    };
+};
 const mapDispatchToProps = dispatch => ({
     setNumber: (payload) => {
-        console.log('App / mapDispatchToProps() - saving ' + payload)//HACK:
+        console.log('App / mapDispatchToProps()') //HACK:
         dispatch(
             handleNumberFun(payload)
         );
