@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+
 import './styles.css';
 
 
 class Number extends Component
 {
-    constructor(props)
-    {
-        super(props);
-    }
 
     render()
     {
-        
+        console.log('props:', this.props); // HACK:
+
+        const classToShowClickedButton = this.props.lastNumberValue > 0
+            ? 'd-block' : 'd-none';
+
         return (
             <div>
                 <h1>The Number component</h1>
 
-                <span class="cblue">
-                    {this.props.value}
-                </span>
+                <p>NumberValue: <span className="cblue">
+                        {this.props.nValue}
+                    </span>
+                </p>
+
+                <p className={classToShowClickedButton}>
+                    Clicked: <span className="cblue">
+                       +{this.props.lastNumberValue}
+                    </span>
+                </p>
             </div>
         );
     }
 }
 
-export default Number;
+const mapStateToProps = (state) =>
+{
+    const lastNumberValue = state.NUMBER.numberValue;
+    const nValue = state.NUMBER.summation;
+
+    return {
+        lastNumberValue,
+        nValue,
+    };
+};
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Number);

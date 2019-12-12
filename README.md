@@ -1,7 +1,12 @@
-# Info
+# First test React-Redux
 
-This is a redux tutorial for dummies
+This is a React-Redux test app.
 
+***
+
+You can use two buttons to add 1 or 2 to a counter and show the last pushed button.
+
+![first react-redux](https://user-images.githubusercontent.com/7187599/70709061-4be67a00-1cdc-11ea-8841-e554cdb5420e.png)
 
 ***
 
