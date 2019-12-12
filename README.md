@@ -2,6 +2,8 @@
 
 This is a React-Redux test app.
 
+## **[Go to the "App page" to test it][1]**
+
 ***
 
 You can use two buttons to add 1 or 2 to a counter and show the last pushed button.
@@ -78,3 +80,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+[1]: https://oricis.github.io/react_redux__test_one/
